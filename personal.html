@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园二手交易平台 - 个人中心</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            100: '#e6f7ff',
+                            300: '#81d4fa',
+                            500: '#03a9f4',
+                            700: '#0288d1'
+                        },
+                        secondary: {
+                            100: '#f9fafb',
+                            200: '#e5e7eb'
+                        }
+                    },
+                    boxShadow: {
+                        card: '0 4px 6px rgba(0,0,0,0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        .page-container {
+            width: 1440px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+        }
+        .nav-active {
+            border-bottom: 3px solid #03a9f4;
+        }
+        .tab-active {
+            color: #03a9f4;
+            border-bottom: 2px solid #03a9f4;
+        }
+        .sidebar-item.active {
+            background-color: #e6f7ff;
+            color: #03a9f4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="page-container">
+        <!-- 顶部导航 -->
+        <header class="flex items-center justify-between p-6 border-b">
+            <div class="flex items-center">
+                <iconify-icon icon="mdi:recycle" class="text-primary-500 text-3xl mr-3"></iconify-icon>
+                <h1 class="text-2xl font-bold text-gray-800">二手校园</h1>
+            </div>
+            <div class="relative w-1/3">
+                <input type="text" placeholder="搜索教材、数码、服饰..." class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-primary-500">
+                <iconify-icon icon="mdi:magnify" class="absolute right-3 top-2.5 text-gray-500 text-xl"></iconify-icon>
+            </div>
+            <div class="flex items-center space-x-6">
+                <button class="p-2 text-gray-600 hover:bg-gray-100 rounded-full">
+                    <iconify-icon icon="mdi:bell-outline" class="text-2xl"></iconify-icon>
+                </button>
+                <button class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-full flex items-center">
+                    <iconify-icon icon="mdi:plus" class="text-xl mr-1"></iconify-icon>
+                    发布商品
+                </button>
+                <div class="flex items-center cursor-pointer">
+                    <img src="https://modao.cc/ai/uploads/ai_pics/38/384491/aigp_1760276175.jpeg" alt="User profile avatar" class="w-10 h-10 rounded-full object-cover">
+                    <span class="ml-2 text-gray-700 font-medium">张小北</span>
+                </div>
+            </div>
+        </header>
+        <!-- 个人中心主体内容 -->
+        <div class="flex p-8">
+            <!-- 左侧菜单 -->
+            <div class="w-1/4 pr-8">
+                <div class="bg-white rounded-xl shadow-card p-6 mb-6">
+                    <div class="flex flex-col items-center mb-6">
+                        <img src="https://modao.cc/ai/uploads/ai_pics/38/384491/aigp_1760276175.jpeg" alt="User profile avatar" class="w-24 h-24 rounded-full object-cover mb-4 border-4 border-primary-100">
+                        <h2 class="text-xl font-bold text-gray-800">张小北</h2>
+                        <p class="text-gray-600 text-sm">计算机学院 大三学生</p>
+                        <div class="flex items-center mt-2">
+                            <iconify-icon icon="mdi:star" class="text-yellow-400 mr-1"></iconify-icon>
+                            <span class="text-gray-700 text-sm">4.8分 (46评价)</span>
+                        </div>
+                    </div>
+                    <div class="border-t pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-600">在售商品</span>
+                            <span class="font-medium">12</span>
+                        </div>
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-600">已售商品</span>
+                            <span class="font-medium">28</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">收藏商品</span>
+                            <span class="font-medium">15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-card p-4">
+                    <h3 class="font-bold text-gray-800 mb-4">账户管理</h3>
+                    <ul class="space-y-2">
+                        <li class="sidebar-item active flex items-center p-2 rounded-lg cursor-pointer">
+                            <iconify-icon icon="mdi:account-outline" class="text-primary-500 mr-3"></iconify-icon>
+                            <span class="text-primary-500">个人信息</span>
+                        </li>
+                        <li class="sidebar-item flex items-center p-2 rounded-lg hover:bg-primary-50 cursor-pointer">
+                            <iconify-icon icon="mdi:shield-account-outline" class="text-gray-600 mr-3"></iconify-icon>
+                            <span>账户安全</span>
+                        </li>
+                        <li class="sidebar-item flex items-center p-2 rounded-lg hover:bg-primary-50 cursor-pointer">
+                            <iconify-icon icon="mdi:map-marker-outline" class="text-gray-600 mr-3"></iconify-icon>
+                            <span>收货地址</span>
+                        </li>
+                        <li class="sidebar-item flex items-center p-2 rounded-lg hover:bg-primary-50 cursor-pointer">
+                            <iconify-icon icon="mdi:heart-outline" class="text-gray-600 mr-3"></iconify-icon>
+                            <span>我的收藏</span>
+                        </li>
+                        <li class="sidebar-item flex items-center p-2 rounded-lg hover:bg-primary-50 cursor-pointer">
+                            <iconify-icon icon="mdi:message-text-outline" class="text-gray-600 mr-3"></iconify-icon>
+                            <span>我的消息</span>
+                        </li>
+                        <li class="sidebar-item flex items-center p-2 rounded-lg hover:bg-primary-50 cursor-pointer">
+                            <iconify-icon icon="mdi:cog-outline" class="text-gray-600 mr-3"></iconify-icon>
+                            <span>系统设置</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 右侧内容区域 -->
+            <div class="w-3/4">
+                <div class="bg-white rounded-xl shadow-card p-6 mb-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-6">个人信息</h2>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">姓名</label>
+                            <input type="text" value="张小北" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">学号</label>
+                            <input type="text" value="2021032101" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">学院</label>
+                            <input type="text" value="计算机学院" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">专业</label>
+                            <input type="text" value="软件工程" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">手机号码</label>
+                            <input type="text" value="138****5678" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">电子邮箱</label>
+                            <input type="text" value="zhangxiaobei@example.com" class="w-full border p-3 rounded focus:ring-1 focus:ring-primary-500 focus:outline-none">
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <label class="block text-gray-700 font-medium mb-2">个人简介</label>
+                        <textarea class="w-full border p-3 rounded h-32 resize-none focus:ring-1 focus:ring-primary-500 focus:outline-none">我是计算机学院大三学生，喜欢编程和分享学习资源。平时会出售一些用过的教材和数码产品，也会购买一些实用的二手物品。</textarea>
+                    </div>
+                    <div class="mt-8 flex justify-end">
+                        <button class="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-full transition">保存修改</button>
+                    </div>
+                </div>
+                <!-- 选项卡 -->
+                <div class="flex border-b mb-6">
+                    <button class="px-4 py-3 font-medium text-gray-700 tab-active">在售商品</button>
+                    <button class="px-4 py-3 font-medium text-gray-700 hover:text-primary-500">已售商品</button>
+                    <button class="px-4 py-3 font-medium text-gray-700 hover:text-primary-500">我买到的</button>
+                    <button class="px-4 py-3 font-medium text-gray-700 hover:text-primary-500">我的收藏</button>
+                </div>
+                <!-- 商品网格 -->
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- 商品卡片 -->
+                    <div class="bg-white rounded-lg shadow-card overflow-hidden hover:shadow-md transition-shadow">
+                        <img src="https://modao.cc/ai/uploads/ai_pics/38/384493/aigp_1760276179.jpeg" alt="Product image of university textbooks" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">高等数学教材全套</h3>
+                                    <div class="flex items-center text-sm">
+                                        <iconify-icon icon="mdi:account-school" class="text-primary-500 mr-1"></iconify-icon>
+                                        <span class="text-gray-600">大四学长</span>
+                                    </div>
+                                </div>
+                                <span class="text-xl font-bold text-red-600">¥25.0</span>
+                            </div>
+                            <div class="mt-3 flex text-xs">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full mr-2">教材资料</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full">9成新</span>
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <button class="text-gray-600 hover:text-primary-500 flex items-center">
+                                    <iconify-icon icon="mdi:pencil-outline" class="mr-1"></iconify-icon>
+                                    编辑
+                                </button>
+                                <button class="text-gray-600 hover:text-red-500 flex items-center">
+                                    <iconify-icon icon="mdi:delete-outline" class="mr-1"></iconify-icon>
+                                    下架
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 更多商品卡片 -->
+                    <div class="bg-white rounded-lg shadow-card overflow-hidden hover:shadow-md transition-shadow">
+                        <img src="https://modao.cc/ai/uploads/ai_pics/38/384494/aigp_1760276180.jpeg" alt="Product image of university textbooks" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-lg mb-1">九成新高数教材</h3>
+                                    <div class="flex items-center text-sm">
+                                        <iconify-icon icon="mdi:account-school" class="text-primary-500 mr-1"></iconify-icon>
+                                        <span class="text-gray-600">大四学长</span>
+                                    </div>
+                                </div>
+                                <span class="text-xl font-bold text-red-600">¥38.0</span>
+                            </div>
+                            <div class="mt-3 flex text-xs">
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full mr-2">教材资料</span>
+                                <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full">9.5成新</span>
+                            </div>
+                            <div class="mt-4 flex justify-between">
+                                <button class="text-gray-600 hover:text-primary-500 flex items-center">
+                                    <iconify-icon icon="mdi:pencil-outline" class="mr-1"></iconify-icon>
+                                    编辑
+                                </button>
+                                <button class="text-gray-600 hover:text-red-500 flex items-center">
+                                    <iconify-icon icon="mdi:delete-outline" class="mr-1"></iconify-icon>
+                                    下架
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 添加商品卡片 -->
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center h-64 cursor-pointer hover:bg-gray-50 transition-colors">
+                        <iconify-icon icon="mdi:plus" class="text-4xl text-gray-400 mb-2"></iconify-icon>
+                        <span class="text-gray-500 font-medium">添加新商品</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.flex.border-b button');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('tab-active', 'text-primary-500'));
+                    this.classList.add('tab-active', 'text-primary-500');
+                });
+            });
+            const sidebarItems = document.querySelectorAll('.sidebar-item');
+            sidebarItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    sidebarItems.forEach(i => {
+                        i.classList.remove('active', 'bg-primary-50', 'text-primary-500');
+                        const icon = i.querySelector('iconify-icon');
+                        if (icon) icon.classList.remove('text-primary-500');
+                        icon.classList.add('text-gray-600');
+                    });
+                    this.classList.add('active', 'bg-primary-50', 'text-primary-500');
+                    const icon = this.querySelector('iconify-icon');
+                    if (icon) icon.classList.remove('text-gray-600');
+                    icon.classList.add('text-primary-500');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
