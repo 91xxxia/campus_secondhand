@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>商品详情 - 校园二手交易平台</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              100: '#e6f7ff',
+              300: '#81d4fa',
+              500: '#03a9f4',
+              700: '#0288d1'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .page-container {
+      width: 1440px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="page-container">
+    <!-- 顶部导航 -->
+    <header class="flex items-center justify-between p-6 border-b">
+      <div class="flex items-center">
+        <iconify-icon icon="mdi:recycle" class="text-primary-500 text-3xl mr-3"></iconify-icon>
+        <h1 class="text-2xl font-bold text-gray-800">二手校园</h1>
+      </div>
+      <div class="relative w-1/3">
+        <input type="text" placeholder="搜索教材、数码、服饰..." class="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-primary-500">
+        <iconify-icon icon="mdi:magnify" class="absolute right-3 top-2.5 text-gray-500 text-xl"></iconify-icon>
+      </div>
+      <div class="flex items-center space-x-6">
+        <button class="p-2 text-gray-600 hover:bg-gray-100 rounded-full">
+          <iconify-icon icon="mdi:bell-outline" class="text-2xl"></iconify-icon>
+        </button>
+        <button class="bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded-full flex items-center">
+          <iconify-icon icon="mdi:plus" class="text-xl mr-1"></iconify-icon>
+          发布商品
+        </button>
+        <div class="flex items-center cursor-pointer">
+          <img src="https://modao.cc/ai/uploads/ai_pics/38/384491/aigp_1760276175.jpeg" alt="User avatar" class="w-10 h-10 rounded-full object-cover">
+          <span class="ml-2 text-gray-700 font-medium">张小北</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- 商品详情主体 -->
+    <div class="p-8">
+      <div class="flex">
+        <!-- 左侧：图片区 -->
+        <div class="w-1/2 pr-8">
+          <img id="1" src="https://modao.cc/ai/uploads/ai_pics/38/384498/aigp_1760276188.jpeg" alt="高数教材附笔记" class="w-full rounded-xl shadow-sm">
+          <!-- 缩略图导航（可选） -->
+          <div class="flex mt-4 space-x-3">
+            <img id="2" src="https://modao.cc/ai/uploads/ai_pics/38/384498/aigp_1760276188.jpeg" alt="Thumbnail 1" class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-400">
+            <img id="3" src="https://modao.cc/ai/uploads/ai_pics/38/384504/aigp_1760276200.jpeg" alt="Thumbnail 2" class="w-20 h-20 object-cover rounded-lg cursor-pointer">
+            <img id="4" src="https://modao.cc/ai/uploads/ai_pics/38/384505/aigp_1760276202.jpeg" alt="Thumbnail 3" class="w-20 h-20 object-cover rounded-lg cursor-pointer">
+          </div>
+        </div>
+
+        <!-- 右侧：信息与操作区 -->
+        <div class="w-1/2 pl-8">
+          <div class="mb-4">
+            <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">教材资料</span>
+            <span class="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full ml-2">9.5成新</span>
+          </div>
+          <h1 class="text-2xl font-bold text-gray-800 mb-2">高数教材附笔记（精品）</h1>
+          <p class="text-gray-600 mb-4">上学期使用的教材，保护完好无明显折痕，内含详细学习笔记和重点标记，经济学院金融专业大一教材。</p>
+
+          <!-- 价格 -->
+          <div class="flex items-end mb-6">
+            <span class="text-3xl font-bold text-red-600">¥38.0</span>
+            <span class="text-gray-500 text-lg ml-2 line-through">¥80.0</span>
+            <span class="ml-4 bg-red-50 text-red-700 text-sm px-2 py-1 rounded">限时特价</span>
+          </div>
+
+          <!-- 卖家信息 -->
+          <div class="flex items-center mb-6 p-4 bg-gray-50 rounded-lg">
+            <img id="5" src="https://modao.cc/ai/uploads/ai_pics/38/384499/aigp_1760276190.jpeg" alt="Seller avatar" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <div class="flex items-center">
+                <span class="font-medium text-gray-800">李学姐</span>
+                <iconify-icon icon="mdi:check-decagram" class="text-blue-500 ml-1" style="font-size: 18px;"></iconify-icon>
+              </div>
+              <div class="text-sm text-gray-600">经济学院 · 大二 · 在校学生</div>
+              <div class="flex items-center mt-1">
+                <iconify-icon icon="mdi:star" class="text-yellow-400"></iconify-icon>
+                <span class="text-sm text-gray-700 ml-1">4.9分（23笔交易）</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 操作按钮 -->
+          <div class="flex space-x-4">
+            <button class="flex-1 bg-primary-500 hover:bg-primary-600 text-white py-3 rounded-full font-medium flex items-center justify-center">
+              <iconify-icon icon="mdi:message-text" class="mr-2"></iconify-icon>
+              联系卖家
+            </button>
+            <button class="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-50 flex items-center">
+              <iconify-icon icon="mdi:heart-outline" class="text-gray-600 mr-1"></iconify-icon>
+              收藏
+            </button>
+          </div>
+
+          <!-- 商品参数 -->
+          <div class="mt-8 pt-6 border-t">
+            <h3 class="font-bold text-gray-800 mb-3">商品信息</h3>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-gray-500">上架时间：</span>2025-04-01</div>
+              <div><span class="text-gray-500">浏览次数：</span>128</div>
+              <div><span class="text-gray-500">所在校区：</span>东校区</div>
+              <div><span class="text-gray-500">交易方式：</span>面交 / 校内代送</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 商品描述展开 -->
+      <div class="mt-10">
+        <h3 class="font-bold text-gray-800 mb-4">商品详情</h3>
+        <div class="prose max-w-none text-gray-700">
+          <p>✅ 教材为《高等数学（同济第七版）》，上下册齐全。</p>
+          <p>✅ 书页干净整洁，无涂鸦，仅有少量荧光笔标记重点。</p>
+          <p>✅ 附赠本人整理的<strong>公式速查表 + 期中/期末真题解析</strong>（电子版）。</p>
+          <p>❌ 不接受快递，仅限校内交易。</p>
+          <p>📍 交易地点：图书馆一楼大厅 或 教学楼A座门口</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
